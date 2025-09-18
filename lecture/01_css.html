@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 개요</title>
+    <link rel="stylesheet" href="../assets/styles/sample.css">
+    <style>
+      /*CSS comment*/
+      p {
+        color: #1a1a1a;
+      }
+    </style>    
+  </head>
+  <body>
+    <!--
+      📌 CSS (Cascading Style Sheet)
+      1. 웹 페이지의 디자인과 레이아웃을 담당하는 스타일 시트 언어 
+      2. HTML의 기본 구조에 색상, 글꼴, 배치, 크기 등 시각적인 요소를 추가해 웹 페이지의 외관을 꾸밀 수 있습니다.
+      3. CSS의 주요 특징 
+        1) 디자인과 구조 분리 
+            → 콘텐츠(HTML)과 디자인(CSS)을 분리하여 관리할 수 있습니다.
+            → 웹 문서의 유지보수가 용이해집니다.
+        2) 재사용성과 확장성
+            → 한번 정의한 CSS파일을 여러 페이지에서 재사용 가능합니다.
+            → 테마나 템플릿 형태로 확장도 가능합니다.
+        3) 다양한 적용 방법 
+            → internal (내부 스타일시트) : HTML <head> 내 <style> 태그에 작성
+            → external (외부 스타일시트) : 별도의 CSS 파일을 만들어 <link> 태그로 불러오기
+            → inline (인라인 스타일)     : 개별 HTML 태그의 style 속성에 직접 작성
+        4) 선택자와 선언부 구조
+            → CSS 규칙은 '선택자(selector)'와 '선언부(declaration)'로 구성됩니다.
+            → 선택자는 스타일을 적용할 HTML 요소를 지정하고, 선언부는 적용할 속성과 값을 정의합니다.
+        5) 계단식(Cascading)과 우선순위
+            → 계단식(Cascading)은 여러 스타일 규칙이 존재할 때 우선순위에 따라 적용되는 방식입니다.
+            → 우선순위는 !important > inline > internal,external 순으로 적용됩니다.
+        6) 반응형 디자인 지원
+            → PC, 태블릿, 스마트폰 등 다양한 기기에 맞춰 웹 페이지의 레이아웃을 유연하게 조정할 수 있는 기능입니다.
+        7) 박스 모델과 레이아웃 제어 
+            → CSS는 박스 모델(콘텐츠, 패딩, 테두리, 마진) 기반으로 레이아웃을 제어합니다.
+            → 요소의 크기와 위치를 세밀하게 조정할 수 있습니다.
+        8) 웹 표준 준수 
+            → CSS는 웹 표준을 준수하여 다양한 브라우저에서 일관된 디자인을 제공합니다.
+      4. CSS 기본 문법
+          선택자(selector) {
+            style속성1: 값1;
+            style속성2: 값2;
+            ...
+          }
+    -->
+
+    <!--내부 스타일(internal)-->
+    <p>Hello CSS</p>
+    <div>안녕하세요.</div>
+
+    <!--외부 스타일(external)-->
+    <pre>반갑습니다</pre>
+
+    <!--인라인 스타일(inline)-->
+    <span>안녕히가세요</span>
+
+  </body>
+</html>

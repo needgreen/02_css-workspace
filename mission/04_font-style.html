@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>텍스트 스타일링 미션</title>
+    <style>
+      @font-face { font-family: 'Paperozi'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+      @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap');
+      .gothic-a1-regular { font-family: "Gothic A1", sans-serif;  font-weight: 400;  font-style: normal;}
+      .nanum-pen-script-regular {  font-family: "Nanum Pen Script", cursive;  font-weight: 400;  font-style: normal;}
+
+
+      body {
+        font-family: "Gothic A1", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px; 
+      }
+
+        .blog-post {
+          line-height: 1.5;
+          padding: 60px 40px;
+        }
+
+        /* 1. 제목 스타일링 */
+        .post-title {
+          font-family: 'Paperozi', sans-serif;
+          color: #333;  
+          text-decoration: underline;
+        }
+
+        /* 2. 부제목 스타일링 */
+        .post-subtitle {
+          word-spacing: 10px;
+          color: #aaa;
+          font-weight: 400;
+          text-transform: uppercase;
+          font-size: 18px;  
+        }
+
+        /* 3. 본문 스타일링 */
+        .post-content {
+          padding: 40px 0;     
+          font-size: 14px;
+          color: #1a1a1a;
+          font-weight: 400;     
+        }       
+
+        /* 4. 인용구 스타일링 */
+        .quote {
+          font-size: 16px;
+          font-style: italic;
+          font-weight: 400;
+          padding: 40px 0;
+          color: mediumseagreen;  
+        }
+
+        /* 5. 강조 텍스트 스타일링 */
+        .highlight {
+          font-weight: bold;
+          color: #fafafa;
+          background-color: darkolivegreen;          
+        }
+
+        /* 6. 태그 스타일링 */
+        .tags {
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+          color: #777;
+          font-weight: 600;
+          font-family: 'Paperozi', sans-serif;  
+          font-size: 14px;
+          word-spacing: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-post">
+        <h1 class="post-title">웹 타이포그래피의 기술</h1>
+        <h2 class="post-subtitle">The Art of Web Typography</h2>
+
+        <div class="post-content">
+            <p>
+                웹 디자인에서 타이포그래피는 사용자 경험을 좌우하는 핵심 요소입니다.
+                적절한 글꼴과 간격, 크기의 선택은 웹사이트의 가독성과 심미성을 결정합니다.
+            </p>
+
+            <div class="quote">
+                "좋은 타이포그래피는 좋은 웹 디자인의 기초이며,
+                사용자와의 효과적인 커뮤니케이션을 가능하게 합니다."
+            </div>
+
+            <p>
+                특히 <span class="highlight">반응형 웹 디자인</span>에서는
+                다양한 화면 크기에서도 일관된 가독성을 제공하는 것이 중요합니다.
+                이를 위해서는 상대적인 단위의 사용과 적절한 행간 설정이 필수적입니다.
+            </p>
+        </div>
+
+        <div class="tags">
+            #typography #webdesign #css #design
+        </div>
+    </div>
+</body>
+</html> 
