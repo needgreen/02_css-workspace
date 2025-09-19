@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 스타일 미션</title>
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap');
+        .gothic-a1-regular { font-family: "Gothic A1", sans-serif;  font-weight: 400;  font-style: normal;}
+        .nanum-pen-script-regular {  font-family: "Nanum Pen Script", cursive;  font-weight: 400;  font-style: normal;}
+         
+     body {
+      font-family: "Gothic A1", sans-serif;
+      font-size: 14px;
+      padding: 40px;
+     }
+
+     table, thead, tbody, tr, th, td {
+      border: 1px solid #bbb;
+      border-collapse: collapse;      
+     }
+
+     thead > tr > th {
+      height: 34px;
+      text-align: center;      
+      vertical-align: middle;
+      text-transform: uppercase;
+      padding-top: 4px;
+     }
+
+     thead > tr >th:first-of-type {
+      color: red;
+     }
+
+     thead > tr >th:last-of-type {
+      color: blue;
+     }
+     
+     tbody > tr > td {
+      width: 80px;
+      height: 80px;
+      position: relative;
+     }
+
+     tbody > tr > td > p {
+      margin: 0;
+      position: absolute;
+      left: 8px;
+      top: 8px;
+     }
+
+     tbody > tr:nth-of-type(1) > td:nth-of-type(-n+4)  {
+      color: #bbb; /*1행의 자식요소 1~4번째까지만 적용하기 (n=0)*/
+     }
+
+     tbody > tr:not(:first-child) > td:nth-of-type(1) {
+      color: red; 
+     }
+
+     tbody > tr:nth-of-type(3) > td:nth-of-type(5) {
+      color: red; /*3행의 자식요소 5번째만 적용하기*/
+     } 
+
+     tbody > tr:nth-of-type(3) > td:nth-of-type(5) {
+      color: red; /*3행의 자식요소 5번째만 적용하기*/
+     } 
+     
+     tbody > tr > td > p > span {
+      font-size: 12px;
+     }
+
+     tbody > tr > td:nth-of-type(7) {
+      color: blue;
+     }
+
+     table > caption {
+      font-weight: bold;
+      padding-bottom: 20px;
+      text-transform: uppercase;
+     }
+
+      tbody > tr > td:hover {
+      background-color: #f7f8e2;
+     }
+
+     #month-tit {
+      color: red;
+      font-size: 26px;
+      font-weight: bold;
+     }
+
+    </style>
+  </head>
+  
+  <body>
+    <div class="month">
+      <table>
+        <caption>2024 <span id="month-tit">8</span> august</caption>
+        <thead>
+          <tr>
+            <th>sun</th>
+            <th>mon</th>
+            <th>tue</th>
+            <th>wed</th>
+            <th>thu</th>
+            <th>fri</th>
+            <th>sat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>          
+            <td><p>28</p></td>
+            <td><p>29</p></td>
+            <td><p>30</p></td>
+            <td><p>31</p></td>
+            <td><p>1</p></td>
+            <td><p>2</p></td>
+            <td><p>3</p></td>
+          </tr>
+          <tr>
+            <td><p>4</p></td>
+            <td><p>5</p></td>
+            <td><p>6</p></td>
+            <td><p>7</p></td>
+            <td><p>8</p></td>
+            <td><p>9</p></td>
+            <td><p>10</p></td>
+          </tr>
+          <tr>
+            <td><p>11</p></td>
+            <td><p>12</p></td>
+            <td><p>13</p></td>
+            <td><p>14</p></td>
+            <td><p>15 <span>광복절</span></p></td>
+            <td><p>16</p></td>
+            <td><p>17</p></td>
+          </tr>
+          <tr>
+            <td><p>18</p></td>
+            <td><p>19</p></td>
+            <td><p>20</p></td>
+            <td><p>21</p></td>
+            <td><p>22</p></td>
+            <td><p>23</p></td>
+            <td><p>24</p></td>
+          </tr>
+          <tr>
+            <td><p>25</p></td>
+            <td><p>26</p></td>
+            <td><p>27</p></td>
+            <td><p>28</p></td>
+            <td><p>29</p></td>
+            <td><p>30</p></td>
+            <td><p>31</p></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>문단 스타일과 목록 스타일 실습 미션</title>
+    <style>
+        @font-face { font-family: 'Paperozi'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap');
+        .gothic-a1-regular { font-family: "Gothic A1", sans-serif;  font-weight: 400;  font-style: normal;}
+        .nanum-pen-script-regular {  font-family: "Nanum Pen Script", cursive;  font-weight: 400;  font-style: normal;}
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+   
+        body {
+          padding: 40px;          
+        }
+
+        .mission-container {
+          font-family: "Gothic A1", sans-serif;
+          font-weight: 400;
+          font-size: 1rem;
+          line-height: 1.2;
+          color: #333;
+        }
+
+        .result {          
+          padding: 20px;
+        }
+
+        .result h2 {
+          font-family: 'Paperozi', sans-serif;
+          font-weight: bold;
+          color: orangered;
+          padding-bottom: 5px;
+          border-bottom: 1px solid orangered;
+          text-align: center;
+        }
+
+        .result h2::after {
+          content: ' 📝';
+        }
+
+        .trip-intro {
+          list-style-position: inside;
+          font-size: 15px;
+          line-height: 24px;
+          padding: 20px 0;
+        }
+
+        .result h3 {
+          font-family: 'Paperozi', sans-serif;
+          font-weight: bold;
+          color: #22bf8d;
+        }
+        
+        .result h3::before {
+          content: '✅ ';
+        }
+
+        .main-items {
+          padding: 40px 40px 10px 40px;
+          margin-bottom: 40px;
+          list-style: none;
+          background-color: #f4f3ee;
+        }
+        
+        .main-items ul>li {
+          border-bottom: 1px solid ;
+        }
+
+        #items-tit {
+          font-weight: bold;
+          font-family: 'Paperozi', sans-serif;
+        }
+
+        .sub-items {
+          font-family: "Gothic A1", sans-serif;
+          padding: 10px 20px 40px 20px;
+          margin: 0;
+          list-style: square;
+          font-weight: 400!important;
+        }
+
+        .sub-items li {
+          padding: 4px 0;
+        }
+
+        .schedule {
+          padding: 40px;
+          background-color: #f4f3ee;
+          list-style-type: square;
+          list-style-position: inside;
+        }
+
+        .schedule li {
+          padding: 5px 0;
+        }
+
+        .memo {
+          text-decoration: line-through;
+          color: #bbb;
+        }
+        .memo::before {
+          content: '📢 ';
+        }
+    </style>
+</head>
+<body>
+    <div class="mission-container">
+        <div class="result">
+            <h2>여행 계획 작성하기</h2>
+            
+            <p class="trip-intro">
+                이번 여름 휴가는 제주도로 떠나기로 했습니다. 맛있는 음식과 아름다운 자연을 즐기면서 
+                특별한 추억을 만들고 싶습니다. 가족들과 함께하는 3박 4일의 여행이 될 것 같아 설렘이 가득합니다.
+                완벽한 여행을 위해 꼼꼼히 계획을 세워보았습니다.
+            </p>
+            
+            <h3>준비물 목록</h3>
+            <ul class="main-items">
+                <li id="items-tit">의류
+                    <ul class="sub-items">
+                        <li>여름옷 3벌</li>
+                        <li>수영복</li>
+                        <li>모자</li>
+                    </ul>
+                </li>
+                <li id="items-tit">전자기기
+                    <ul class="sub-items">
+                        <li>카메라</li>
+                        <li>보조배터리</li>
+                        <li>충전기</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>일정표</h3>
+            <ol class="schedule">
+                <li><strong>09:00</strong> - <em>공항</em> 도착</li>
+                <li><strong>10:30</strong> - <em>제주 민속촌</em> 관람</li>
+                <li><strong>13:00</strong> - <em>중문 해수욕장</em> 방문</li>
+                <li><strong>16:00</strong> - <em>성산일출봉</em> 등반</li>
+                <li><strong>19:00</strong> - <em>흑돼지 거리</em> 저녁 식사</li>
+            </ol>
+
+            <p class="memo">
+                우산 챙기기 (기상예보 맑음)
+            </p>
+        </div>
+    </div>
+
+</body>
+</html> 
