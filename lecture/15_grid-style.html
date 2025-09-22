@@ -71,6 +71,11 @@
         row-gap: 10px;
         gap: 10px;
       }
+      @media (max-width:780px) {
+        .container1 {
+          grid-template-columns: repeat(1,300px);  
+          padding: 20px;
+      }}
     </style>
    
     <div class="container1">
@@ -115,9 +120,14 @@
         align-content: space-between; 
         align-content: space-around;
         align-content: space-evenly;
+      }
 
-
-
+      @media (max-width:780px) {
+        .container2 {
+          width: 100%;
+          grid-template-columns: repeat(3, 80px);  
+          padding: 20px;
+        }
       }
     </style>
 
@@ -159,6 +169,14 @@
 
         gap: 10px;
 
+      }
+      @media (max-width:780px) {
+        .container3 {
+          width: 100%;
+          height: auto;
+          grid-template-columns: repeat(3, 80px);  
+          padding: 10px;
+        }
       }
     </style>
 
@@ -216,7 +234,27 @@
       .container4 .item7, .container4 .item8 {
         grid-column: 1/-1;/* 1번 라이부터 끝까지(-1은 끝을 의미)*/
       }
-      
+
+      @media (max-width:780px) {
+        .container4 {
+          width: 100%;
+          height: auto;
+          grid-template-columns: 1fr;  
+          grid-auto-rows: auto;
+          padding: 10px;
+        }
+        .container4 .item1,
+        .container4 .item2,
+        .container4 .item3,
+        .container4 .item4,
+        .container4 .item5,
+        .container4 .item6,
+        .container4 .item7,
+        .container4 .item8 {
+          grid-column: auto !important;
+          grid-row: auto !important;
+        }
+      }
     </style>
 
     <div class="container4">
@@ -252,6 +290,12 @@
         "b d d";
 
      }
+      @media (max-width:780px) { 
+        .container5 {
+          width: 100%;
+          grid-template-columns: repeat(1,1fr);
+        }
+      }
    </style>
 
 
