@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid style</title>
+    <style>
+      * {box-sizing: border-box ;}
+      body {margin: 0; padding: 0 40px;}
+      div {border: 1px solid gray;}
+
+      .item {
+        background-color: #abdaca;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .item:nth-child(odd) { /*odd : 홀수를 의미함*/
+        background-color: #f0e7de; 
+      } 
+
+    </style>
+  </head>
+  <body>
+    <!-- 
+      📌 CSS Grid
+      1. 2차원 레이아웃(가로/세로) 구성이 가능한 강력한 레이아웃 시스템입니다.
+      2. 부모 컨테이너를 격자(Grid)로 만들고, 자식 아이템들을 칸에 배치합니다.
+      3. 기존 레이아웃 기술의 한계를 넘어 레이아웃 자체를 먼저 설계하는 방식입니다.
+      4. 기본 개념
+          → 2차원 레이아웃 모델 : 행(row)과 열(column) 단위로 배치
+      5. 구성 요소
+        1) grid container  → display: grid를 지정한 요소
+        2) grid item       → grid container 내부 요소 (자식)
+        3) grid cell       → row(가로줄)와 column(세로줄)의 교차 지점점
+    -->
+
+    <!-- 
+      * display: grid; 
+      1) 특정 컨테이너에 display: grid; 설정 시 자식들은 grid item이 됩니다.
+      2) 기본적으로 명시된 템플릿(열/행)과 갭에 맞춰 칸(셀)이 만들어지고 아이템이 채워집니다.
+
+      * grid-template-columns / grid-template-rows
+        → 열과 행의 트랙(트랙 = 칸의 너비/높이)을 정의합니다.
+
+          [ 단위와 함수 ]
+          1) fr 단위 : 남은 공간의 비율 단위 (fraction)
+          2) repeat(n, track) : 반복 정의 (함수)
+          3) minmax(min, max) : 최소/최대 범위로 유연한 트랙
+      
+      * gap, row-gap, column-gap
+        → 그리드 트랙 간격(행/열 간격)을 지정합니다.
+    -->
+
+    <style>
+      .container1 {
+        width: 100vw;
+        min-height: 400px;
+        display: grid;
+        
+        /*2행 3열*/
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 60px 60px;
+
+        grid-template-columns: 1fr 2fr 1fr; /* 1:2:1 비율로 */        
+        grid-template-rows: repeat(2, 100px); /* (반복횟수, 크기) */
+        
+        grid-template-columns: 300px 1fr 1fr;
+        grid-template-columns: 200px repeat(2, minmax(80px,300px));
+
+        row-gap: 10px;
+        gap: 10px;
+      }
+    </style>
+   
+    <div class="container1">
+      <div class="item">item1</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+      <div class="item">item5</div>
+      <div class="item">item6</div>
+    </div>
+ 
+
+    <!-- 
+      * justify-content / align-content (컨테이너 기준)
+      1) 전체 그리드(트랙 묶음)를 컨테이너 안에서 정렬합니다.
+      2) 컨테이너 크기가 그리드 총합보다 클 때 효과가 보입니다.
+      3) 값: flex와 유사 (center, space-between, space-around, space-evenly, start/end)
+    -->
+
+    <style>
+      .container2 {
+        width: 420px;
+        height: 180px;
+        border: 1px dashed #333;
+
+        display: grid;
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(2, 60px);
+
+        /* 아이템 가로 정렬*/
+        justify-content: start;
+        justify-content: end;
+        justify-content: center;
+        justify-content: space-between; /* 아이템 사이 공백 */
+        justify-content: space-around; /* 아이템 앞뒤로 공백 */
+        justify-content: space-evenly; /* 아이템 균등하게 공백 */
+
+        /* 아이템 세로 정렬 */
+        align-content: start;
+        align-content: end;
+        align-content: center;
+        align-content: space-between; 
+        align-content: space-around;
+        align-content: space-evenly;
+
+
+
+      }
+    </style>
+
+    <div class="container2">
+      <div class="item">item1</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+      <div class="item">item5</div>
+      <div class="item">item6</div>
+    </div>
+ 
+
+    <!-- 
+      * justify-items / align-items (아이템 기준)
+        → 각 셀 내부에서 아이템 정렬 방식을 지정합니다.
+    -->
+    <br>
+    <hr>
+    <br>
+
+
+    <style>
+      .container3 {
+        width: 420px;
+        height: 180px;
+        border: 1px dashed #ccc;
+
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        /*grid-template-rows: repeat(2, 60px); 2행으로 고정*/
+        grid-auto-rows: 80px; /* 행이 자동으로 늘어남, 높이는 60px로 고정 */
+        
+        justify-items: start;
+        justify-items: center;
+
+        align-items: start;
+        align-items: center;
+
+        gap: 10px;
+
+      }
+    </style>
+
+    <div class="container3">
+      <div class="item">item1</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+      <div class="item">item5</div>
+      <div class="item">item6</div>
+    </div>
+
+    <br><hr><br>
+    
+
+    <!-- 
+      * grid-row / grid-column (아이템 배치)
+      1) 특정 칸에 아이템을 직접 배치하거나, 칸을 가로/세로로 병합할 수 있습니다.
+      2) 형식: grid-column: start / end;  grid-row: start / end;
+      3) span 키워드: 시작선에서 몇 칸을 확장할지 지정
+    -->
+
+    
+    <style>
+      .container4 {
+        width: 400px;
+        border: 1px dashed #ccc;
+
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-auto-rows: 50px;
+        gap: 10px;
+      }
+      .container4 .item1 {
+        /* 1열 2열 병합*/
+        grid-column-start: 1; /* 아이템에 부여하는 속성 */
+        grid-column-end: 3;
+      }
+
+      .container4 .item2 {
+        /* 3열, 4열 병합*/
+        grid-column: 3/5; /*3번 라인부터 5번 라인까지를 의미*/
+        /* 1행, 2행 병합*/
+        grid-row: 1/3;
+      }
+
+      .container4 .item3 {
+        grid-row: 2/span 2;/*2번 라인에서 span 숫자(2개의 행)*/
+      }
+
+      .container4 .item4 {
+        grid-row: 2/4;
+      }
+
+      .container4 .item7, .container4 .item8 {
+        grid-column: 1/-1;/* 1번 라이부터 끝까지(-1은 끝을 의미)*/
+      }
+      
+    </style>
+
+    <div class="container4">
+      <div class="item item1">item1</div>
+      <div class="item item2">item2</div>
+      <div class="item item3">item3</div>
+      <div class="item item4">item4</div>
+      <div class="item item5">item5</div>
+      <div class="item item6">item6</div>
+      <div class="item item7">item7</div>
+      <div class="item item8">item8</div>
+    </div>
+
+    <!-- 
+      * grid-template-areas, grid-area
+        → 레이아웃을 이름으로 설계하고, 아이템을 영역 이름에 배치합니다.
+    -->
+
+   <br> <hr><br>
+
+   <style>
+     .container5 {
+      width: 380px;
+      border: 1px solid #ccc;
+
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-areas: 
+        "a a a"
+        "b c c"
+        "b d d";
+
+     }
+   </style>
+
+
+   <div class="container5">
+    <div class="item item1" style="grid-area: a;">item1</div>
+    <div class="item item2" style="grid-area: b;">item2</div>
+    <div class="item item3" style="grid-area: c;">item3</div>
+    <div class="item item4" style="grid-area: d;">item4</div>
+   </div>
+
+    <br><br><br><br>
+
+    
+
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex layout mission</title>
+  </head>
+  <style>
+    * { box-sizing: border-box;}
+    body, p, h1,h2,h3 {margin: 0; padding: 0;}
+
+    .content-wrap {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      width: 100%;
+      background-color: #333;
+      padding: 15px 20px;
+      margin-bottom: 10px;
+    }
+    .header p {
+      text-transform: capitalize;
+      color: #fafafa;
+    }
+    .wrapper {
+      display: flex;
+      flex: 1;
+      gap: 10px;
+    }
+    .nav {
+      background-color: #efefef;
+      border: 1px solid #eee;
+      padding: 20px;
+      width: 200px;
+    }
+    .nav ul {
+      padding: 0 20px;
+    }
+    .main {
+      border: 1px solid #eee;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 10px;
+    }
+     .p-box {
+      padding: 10px;
+      background-color: #f5f5ff;
+      border: 1px dotted #babacd;
+    }
+    .aside {
+      background-color: #efefef;
+      border: 1px solid #eee;
+      padding: 20px;
+      width: 200px;
+    }    
+    .aside p {
+      padding: 10px 0;
+    }
+    .footer {
+      width: 100%;
+      background-color: #333;
+      display: flex;
+      padding: 15px 20px;
+      margin-top:10px;
+    }
+    .footer p {
+      color: #fafafa;
+    }
+  </style>
+  <body>
+    <div class="content-wrap">
+      <div class="header">
+        <p>머리부(header)</p>
+      </div>
+      
+      <div class="wrapper">
+        <div class="nav">
+          <h3>네비게이션(Nav)</h3>
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      
+        <div class="main">
+          <h1>메인 콘텐츠(Main)</h1>
+         
+            <p class="p-box">양 옆은 고정폭, 가운데는 가변폭!</p>
+            <p>Hint. 가운데 영여은 <small>flex : 1</small>로 남는 공간을 차지합니다.</p>
+
+        </div>
+
+        <div class="aside">
+          <h3>사이드바(Aside)</h3>
+          <p>공지/광고/프로필 등</p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>바닥부(Footer)</p>
+      </div>
+    </div>  
+  </body>
+</html>
